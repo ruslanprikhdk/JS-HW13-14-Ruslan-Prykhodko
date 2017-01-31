@@ -1,0 +1,104 @@
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div {
+  margin: 10px 0% 10px 18%;
+  font-size: 17px;
+}
+
+form:nth-of-type(1),
+form:nth-of-type(2),
+form:nth-of-type(3) {
+  width: 16%;
+  margin-left: 22%;  
+}
+
+label {
+  display: block;
+}
+
+input[type = "radio"] {
+  display: inline-block;
+  margin: 8px 3% 8px 2%;
+}
+
+
+input[type = "button"] {
+  margin: 50px 35% 0px 35%;
+  width: 30%;
+  height: 50px;
+  font-weight: bold;
+  border: 1px solid black;
+  background-color: powderblue;
+}
+
+#modal_form {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  border: 3px #000 solid;
+  background: #fff;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+  display: none;
+  opacity: 0;
+  z-index: 5;
+  padding: 20px 10px;
+}
+
+#modal_form #modal_close {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: block;
+}
+
+#overlay {
+  z-index: 3;
+  position: fixed;
+  background-color: #000;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: none;
+  margin: 0;
+}
+
+.test_results {
+  margin: 20px 0% 0px 0%;
+}
+
+.result_desc {
+  margin: 0;
+  text-align: center;
+}
+
+.q1_res,
+.q2_res,
+.q3_res,
+.test_sum {
+  margin-left: 5%;
+  font-weight: bold;
+}
+
+.q1_result,
+.q2_result,
+.q3_result,
+.test_summary {
+  font-weight: normal;
+  font-style: italic;
+}
