@@ -1,24 +1,24 @@
-﻿'use strict';
+﻿'use strict';	
 
 var obj = {
-  title: 'Тест по программированию',
-  question1:'1. Вопрос №1',
-  set1:{
-    answer1:'Вариант ответа №1',
-    answer2:'Вариант ответа №2',
-    answer3:'Вариант ответа №3'},
-  question2:'2. Вопрос №2',
+title: "Тест на проверку знаний",
+question1: "1. Какая планета Солнечной Системы ближе всего к Солнцу?",
+set1:{
+    answer1: "Плутон",
+    answer2: "Меркурий",
+    answer3: "Венера"},
+  question2:'2. Кто автор Великих реформ 1860х в Российской Империи?',
   set2:{
-    answer1:'Вариант ответа №1',
-    answer2:'Вариант ответа №2',
-    answer3:'Вариант ответа №3'},
-  question3:'3. Вопрос №3',
+    answer1:'Николай II',
+    answer2:'Александр II',
+    answer3:'Александр III'},
+  question3:'3. Какой город является столицей государства Бангладеш?',
   set3:{
-    answer1:'Вариант ответа №1',
-    answer2:'Вариант ответа №2',
-    answer3:'Вариант ответа №3'},
-  button:'Проверить мои результаты'
+    answer1:'Манила',
+    answer2:'Джакарта',
+    answer3:'Дакка'},
 };
+
 
 localStorage.setItem('questionnaire', JSON.stringify(obj));
 
@@ -26,82 +26,17 @@ var test = localStorage.getItem('questionnaire');
 
 var test2 = JSON.parse(test);
 
-var wrapper = $('#checking');
-
-function createH1(text) {
-  var h1 = document.createElement('h1');
-  h1.appendChild(document.createTextNode(text));
-  return h1;
-}
-
-function createDiv(text) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(text));
-  return div;
-}
-
-function createForm(text1, text2, text3) {
-  var form = document.createElement('form');
-  var label = document.createElement('label');
-  var input = document.createElement('input');
-  input.type = 'radio';
-  input.name = 'radioName';
-  label.appendChild(input);
-  label.appendChild(document.createTextNode(text1));
-  form.appendChild(label);
-  var label = document.createElement('label');
-  var input = document.createElement('input');
-  input.type = 'radio';
-  input.name = 'radioName';
-  label.appendChild(input);
-  label.appendChild(document.createTextNode(text2));
-  form.appendChild(label);
-  var label = document.createElement('label');
-  var input = document.createElement('input');
-  input.type = 'radio';
-  input.name = 'radioName';
-  label.appendChild(input);
-  label.appendChild(document.createTextNode(text3));
-  form.appendChild(label);
-  return form;
-}
-
-function createButton(text) {
-  var form = document.createElement('form');
-  var button = document.createElement('input');
-  button.type = 'button';
-  button.name = 'name2';
-  button.value = (text);
-  form.appendChild(button);
-  return form;
-}
-
-var elements = [
-  createH1(test2.title),
-  createDiv(test2.question1),
-  createForm(test2.set1.answer1, test2.set1.answer2, test2.set1.answer3),
-  createDiv(test2.question2),
-  createForm(test2.set2.answer1, test2.set2.answer2, test2.set2.answer3),
-  createDiv(test2.question3),
-  createForm(test2.set3.answer1, test2.set3.answer2, test2.set3.answer3),
-  createButton(test2.button)
-];
-
-function DOM () {
-  for(var i = 0; i < elements.length; i++) {
-  wrapper.append(elements[i]);
-  }
-}
-
-DOM ()
 
 $(function () {
+  
+  var html = $('#test').html();
+     
+  var content = tmpl(html, test2);   
 
-  var $tmpl = $('#checking').html();
-
-  $('body').append($tmpl);
-
+  $('body').append(content);
+  
 });
+
 
 $(function () {
   $('input[type = "button"]').click(function(event) {

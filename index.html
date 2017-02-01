@@ -7,29 +7,51 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.js"></script>
-    <script src="js/template.js"></script>
-    
+    <script src="js/tmpl.js"></script>
+
+    <script src="js/script.js"></script>     
 </head>
 
 <body>
 
-    <script type="text/html" id="checking">
-        
+    <script type="text/html" id="test">         
+    <h1><%= title %></h1>
+    <div><%= question1 %></div>
+    <form>
+        <label><input type="radio" name="radioName"><%= set1.answer1 %></label>
+        <label><input type="radio" name="radioName"><%= set1.answer2 %></label>
+        <label><input type="radio" name="radioName"><%= set1.answer3 %></label>  
+    </form>
+    <div><%= question2 %></div>
+    <form>
+        <label><input type="radio" name="radioName"><%= set2.answer1 %></label>
+        <label><input type="radio" name="radioName"><%= set2.answer2 %></label>
+        <label><input type="radio" name="radioName"><%= set2.answer3 %></label>  
+    </form>
+    <div><%= question3 %></div>
+    <form>
+        <label><input type="radio" name="radioName"><%= set3.answer1 %></label>
+        <label><input type="radio" name="radioName"><%= set3.answer2 %></label>
+        <label><input type="radio" name="radioName"><%= set3.answer3 %></label>  
+    </form>
+    <form>
+        <input type="button" name="name2" value="Проверить мои результаты">
+    </form>
+  
     </script>
-
-    <div id="modal_form">
-        <span id="modal_close">X</span> 
-        <div class="test_results">
-          <div class="result_desc">Результаты сдачи Вашего теста приведены ниже:</div>
-          <div class="q1_res">Вопрос 1: <span class="q1_result"></span></div>
-          <div class="q2_res">Вопрос 2: <span class="q2_result"></span></div>
-          <div class="q3_res">Вопрос 3: <span class="q3_result"></span></div>
-          <div class="test_sum">Итог: <span class="test_summary"></span></div>
+        <div id="modal_form">
+            <span id="modal_close">X</span> 
+            <div class="test_results">
+                <div class="result_desc">Результаты сдачи Вашего теста приведены ниже:</div>
+                <div class="q1_res">Вопрос 1: <span class="q1_result"></span></div>
+                <div class="q2_res">Вопрос 2: <span class="q2_result"></span></div>
+                <div class="q3_res">Вопрос 3: <span class="q3_result"></span></div>
+                <div class="test_sum">Итог: <span class="test_summary"></span></div>
+            </div>
         </div>
-    </div>
-    <div id="overlay"></div>
-    
-<script src="js/script.js"></script>       
+        <div id="overlay"></div>
+
+      
 </body>
 
 </html>
